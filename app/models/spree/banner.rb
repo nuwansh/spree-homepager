@@ -1,7 +1,7 @@
 module Spree
   class Banner < ActiveRecord::Base
     
-    attr_accessible :tagline, :target_url, :visible, :place, :position, :image
+    attr_accessible :tagline, :target_url, :visible, :place, :position, :image, :name, :body
     
     acts_as_list
     has_attached_file :image,
@@ -14,6 +14,10 @@ module Spree
 
     scope :visible, where(:visible => true)
     scope :at_place, lambda {|place| visible.where(:place => place) }
+    # Find banner by name
+    scope :get_banner, lambda do |name|
+      visible.where(:name => name)
+    end
 
   end
 end
