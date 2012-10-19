@@ -15,9 +15,8 @@ module Spree
     scope :visible, where(:visible => true)
     scope :at_place, lambda {|place| visible.where(:place => place) }
     # Find banner by name
-    scope :get_banner, lambda do |name|
-      visible.where(:name => name)
-    end
+
+    scope :get_banner, lambda {|name| visible.where(:name => name) }
 
   end
 end
