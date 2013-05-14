@@ -1,3 +1,4 @@
+"2.x.x" => { :branch => "2-0-beta" }
 "1.x.x" => { :branch => "master", :version => '1.0.0' }
 "0.60.x" => { :version => "0.60", :tag => "0.60" }
 "0.50.x" => { :version => "0.50", :tag => "0.50" }
